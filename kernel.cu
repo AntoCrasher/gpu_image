@@ -23,7 +23,8 @@
 #define CROSS(v1, v2) vec3((v1).y * (v2).z - (v1).z * (v2).y, (v1).z * (v2).x - (v1).x * (v2).z, (v1).x * (v2).y - (v1).y * (v2).x)
 #define DOT(v1, v2) ((v1).x * (v2).x + (v1).y * (v2).y + (v1).z * (v2).z)
 #define DOT_2(v1, v2) ((v1).x * (v2).x + (v1).y * (v2).y)
-#define LENGTH(v) (sqrt((v).x * (v).x + (v).y * (v).y + (v).z * (v).z))
+#define LENGTH(v) (sqrt(DOT(v, v)))
+#define LENGTH_2(v) (sqrt(DOT_2(v, v)))
 #define NORMALIZE(v) ((v) / LENGTH(v))
 
 using namespace std;
